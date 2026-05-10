@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FES ETHIOPIA 🇪🇹 – Safaricom Import Config</title>
+    <meta name="description" content="FES ETHIOPIA – Free Ethiopia Server. Tap to import SlipNet VPN config directly for Safaricom. Join our Telegram channel for free internet.">
+    <meta property="og:title" content="FES ETHIOPIA 🇪🇹 – Safaricom SlipNet VPN">
+    <meta property="og:description" content="One-tap import SlipNet VPN config for Safaricom. Free Ethiopia Server.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='33.33' fill='%23078930'/%3E%3Crect y='33.33' width='100' height='33.33' fill='%23fcdd09'/%3E%3Crect y='66.66' width='100' height='33.34' fill='%23da121a'/%3E%3C/svg%3E">
+    
+    <style>
+        /* ── RESET ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --green: #078930;
+            --green-dark: #055a1e;
+            --yellow: #fcdd09;
+            --red: #da121a;
+            --bg: #0a0d17;
+            --card: #111625;
+            --card2: #161d30;
+            --text: #e8ecf5;
+            --muted: #8891b0;
+            --glow: rgba(7,137,48,.25);
+            --accent: #6ecbf5;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ── ANIMATED BG ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 30% 0%, rgba(7,137,48,.10) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 70% 100%, rgba(252,221,9,.07) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 30% at 50% 50%, rgba(218,18,26,.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 16px 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── HEADER ── */
+        .hero {
+            text-align: center;
+            padding: 40px 0 28px;
+        }
+
+        .hero .flag {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 16px;
+        }
+
+        .hero .flag div {
+            width: 50px;
+            height: 12px;
+            border-radius: 8px;
+        }
+        .hero .flag .g { background: var(--green); }
+        .hero .flag .y { background: var(--yellow); }
+        .hero .flag .r { background: var(--red); }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -.03em;
+            background: linear-gradient(135deg, #fff 30%, #fcdd09 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-top: 6px;
+        }
+
+        /* ── CARDS ── */
+        .card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 26px 22px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,.06);
+            transition: border-color .3s;
+        }
+        .card:hover { border-color: rgba(255,255,255,.12); }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .card h2 .emoji { font-size: 1.3rem; }
+
+        .card p {
+            color: var(--muted);
+            font-size: .95rem;
+        }
+        .card p strong { color: var(--text); }
+
+        /* ── SAFARICOM BRANDING ── */
+        .saf-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(7,137,48,.15);
+            border: 1px solid rgba(7,137,48,.3);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 700;
+            color: #4ae07a;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        /* ── BIG IMPORT BUTTON ── */
+        .import-section {
+            text-align: center;
+            padding: 10px 0 6px;
+        }
+
+        .import-btn-wrap {
+            display: inline-block;
+            position: relative;
+        }
+
+        .btn-import {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--green), #0ab04a);
+            color: #fff !important;
+            text-decoration: none;
+            padding: 20px 42px;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            transition: all .3s ease;
+            box-shadow: 0 8px 32px rgba(7,137,48,.35);
+            min-width: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-import::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,.1) 50%, transparent 60%);
+            transform: translateX(-100%);
+            transition: transform .6s;
+        }
+
+        .btn-import:hover::before { transform: translateX(100%); }
+        .btn-import:hover { transform: scale(1.04); box-shadow: 0 12px 40px rgba(7,137,48,.45); }
+        .btn-import:active { transform: scale(.97); }
+
+        .btn-import .icon {
+            font-size: 1.5rem;
+        }
+
+        .btn-import .sub {
+            display: block;
+            font-size: .7rem;
+            font-weight: 500;
+            opacity: .8;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.08);
+            color: var(--text) !important;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: .95rem;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,.12);
+            transition: all .25s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover { background: rgba(255,255,255,.14); transform: scale(1.03); }
+
+        .btn-tg {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #1e96c8, #179cde);
+            color: #fff !important;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all .25s;
+            box-shadow: 0 4px 20px rgba(30,150,200,.3);
+        }
+        .btn-tg:hover { transform: scale(1.04); box-shadow: 0 8px 28px rgba(30,150,200,.4); }
+
+        /* ── COPY CONFIG ── */
+        .config-box {
+            background: #080b16;
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin: 14px 0 8px;
+            border: 1px solid rgba(255,255,255,.06);
+        }
+
+        .config-box .label-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .config-box code {
+            display: block;
+            font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+            font-size: .72rem;
+            line-height: 1.5;
+            word-break: break-all;
+            color: #9aa5c8;
+            user-select: all;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .copy-btn {
+            background: rgba(255,255,255,.07);
+            border: none;
+            color: var(--text);
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: .75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+        }
+        .copy-btn:hover { background: var(--green); color: #fff; }
+        .copy-btn.copied { background: var(--green); color: #fff; }
+
+        /* ── STEPS ── */
+        .step-list { counter-reset: step; padding: 0; list-style: none; }
+
+        .step-list li {
+            counter-increment: step;
+            padding: 14px 0 14px 46px;
+            position: relative;
+            border-left: 2px solid rgba(255,255,255,.07);
+            margin-left: 16px;
+            color: var(--muted);
+            font-size: .93rem;
+        }
+
+        .step-list li:last-child { border-left-color: transparent; }
+
+        .step-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: -16px;
+            top: 12px;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--green), #0ab04a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: .82rem;
+            color: #fff;
+            box-shadow: 0 0 16px var(--glow);
+        }
+
+        .step-list li strong { color: var(--text); }
+
+        /* ── FEATURES GRID ── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .grid-item {
+            background: rgba(255,255,255,.03);
+            border-radius: 12px;
+            padding: 14px 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,.04);
+        }
+        .grid-item .gi-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+        .grid-item .gi-label { font-size: .82rem; color: var(--muted); font-weight: 600; }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            padding: 30px 0 10px;
+            border-top: 1px solid rgba(255,255,255,.04);
+            margin-top: 20px;
+        }
+        .footer p { color: var(--muted); font-size: .82rem; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: var(--green);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: .9rem;
+            opacity: 0;
+            transition: all .4s ease;
+            pointer-events: none;
+            z-index: 999;
+            white-space: nowrap;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.9rem; }
+            .btn-import { padding: 16px 24px; font-size: 1.05rem; min-width: auto; width: 100%; }
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+            .card { padding: 20px 16px; }
+            .container { padding: 12px 12px 40px; }
+            .config-box code { font-size: .65rem; }
+            .step-list li { padding-left: 40px; margin-left: 12px; }
+            .step-list li::before { width: 28px; height: 28px; left: -14px; font-size: .75rem; }
+        }
+
+        @media (max-width: 400px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        /* ── PULSE ANIMATION ── */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 8px 32px rgba(7,137,48,.35); }
+            50% { box-shadow: 0 8px 48px rgba(7,137,48,.55); }
+        }
+        .btn-import {
+            animation: pulse-glow 2.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ═══ HERO ═══ -->
+        <header class="hero">
+            <div class="flag">
+                <div class="g"></div><div class="y"></div><div class="r"></div>
+            </div>
+            <h1>FES ETHIOPIA</h1>
+            <p><strong>Free Ethiopia Server</strong> 🇪🇹 · Safaricom SlipNet VPN</p>
+        </header>
+
+        <!-- ═══ DIRECT IMPORT BUTTON ═══ -->
+        <div class="card" style="border-color: rgba(7,137,48,.25); background: linear-gradient(135deg, var(--card), #0d1a1a);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                <h2 style="margin-bottom: 0;"><span class="emoji">📥</span> Safaricom Import Config</h2>
+                <span class="saf-badge">⚡ One-Tap Import</span>
+            </div>
+            <p style="margin-bottom: 18px;">
+                <strong>Tap the button below</strong> to automatically import this config into SlipNet. 
+                Works on <strong>Android devices</strong> with SlipNet installed (v1.9.0+).
+            </p>
+
+            <div class="import-section">
+                <a href="slipnet-enc://AcYa8hTgt/4B6CNqQTMX8R+bbsz6VblCaEIFTJzqbnlM2tsl08HARtR8W39AzbKHIyr63zOE+9ePprmBhrx7kyRPGXdzgmasuz1eoXyNRxJYSUs28xklFrqi512mep65C97JkiXGeDVs/yDpI1/kz+jW2xUy0ho/vVS5XJbxLRpNkLrdv7ngstG3Si5g7FbPhCwh6HC+bPrSuXzr27dCoqHH648hlKiodJ6Qn4y+12pgWtmvwr8ujD6uey0vqzn0cEltq63+QXPKrF6obmfRDpwdXPCH481hs1SZ95Y1L601wMgWEKrXEJYjH8KZmPoaeHiFLPh3Wpp+Tph2/CVgZxpxC68UEV6m7eVHHosTH30TWAYQr4QCD9X35id77ACjh40TZ4BrSa9RQA+WgPXF2PB98AkraPU2ivL9Sb1u9e4/ykIcWBDJYkmXEmLWpEv+/CAmvLjR5dpE2T3QBI4wXGwKp8HVRd60DW3Z9+rRDmUjf9+ZE27tWFUIjFKM2WQfa79gsl6floPby/EwikQLtMg8KWtLQk7LG5+eghzgJqL+uoJrVBnca2E4ViTS3km8V7YIlGp0au9NTxIatmnRd2Xk" 
+                   class="btn-import" 
+                   onclick="trackImport()">
+                    <span class="icon">🔗</span>
+                    <span>
+                        Import Config Into SlipNet
+                        <span class="sub">tap → opens SlipNet app automatically</span>
+                    </span>
+                </a>
+                <p style="font-size: .78rem; color: var(--muted); margin-top: 12px;">
+                    👆 <strong>Requires SlipNet installed</strong> on Android. 
+                    <a href="#download" style="color: var(--accent);">Don't have it? Download below ↓</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- ═══ TELEGRAM BANNER ═══ -->
+        <div class="card" style="background: linear-gradient(135deg, #162a45, #1a3363); border-color: rgba(30,150,200,.2);">
+            <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="font-size: 2.2rem;">✈️</span>
+                    <div>
+                        <h2 style="margin-bottom: 2px;">Telegram Channel</h2>
+                        <p style="font-size: .85rem;">Get new configs, updates &amp; support</p>
+                    </div>
+                </div>
+                <a href="https://t.me/Free_Ethio_server_FES" target="_blank" rel="noopener" class="btn-tg">
+                    🔗 @Free_Ethio_server_FES
+                </a>
+            </div>
+        </div>
+
+        <!-- ═══ HOW IT WORKS ═══ -->
+        <div class="card" id="download">
+            <h2><span class="emoji">📲</span> How to Set Up — 3 Simple Steps</h2>
+            <ol class="step-list">
+                <li>
+                    <strong>Download &amp; Install SlipNet</strong><br>
+                    Get the latest APK from the official source:
+                    <a href="https://github.com/anonvector/SlipNet/releases" target="_blank" rel="noopener" style="color: var(--accent);">github.com/anonvector/SlipNet</a>
+                    (Get <strong>arm64-v8a</strong> for most Android phones)
+                </li>
+                <li>
+                    <strong>Tap the Import Button Above</strong><br>
+                    Click <strong>"Import Config Into SlipNet"</strong> — it will open SlipNet automatically 
+                    and import the <strong>Safaricom</strong> profile in one tap.
+                </li>
+                <li>
+                    <strong>Connect &amp; Enjoy</strong><br>
+                    Select the imported profile in SlipNet, tap <strong>Connect</strong>, and you're online!<br>
+                    ✅ Set Telegram proxy: <code style="background: rgba(255,255,255,.07); padding: 2px 6px; border-radius: 4px; font-size: .8rem;">https://t.me/socks?server=127.0.0.1&port=10880</code>
+                </li>
+            </ol>
+
+            <div style="margin-top: 16px; padding: 14px; background: rgba(252,221,9,.06); border-radius: 12px; border: 1px solid rgba(252,221,9,.1);">
+                <p style="font-size: .85rem; color: var(--yellow); font-weight: 600;">💡 Tip for Safaricom users:</p>
+                <p style="font-size: .85rem; margin-top: 2px;">If auto-import doesn't trigger, copy the config from the box below and use <strong>Import Profile</strong> from SlipNet's menu (⋮ three dots).</p>
+            </div>
+        </div>
+
+        <!-- ═══ RAW CONFIG COPY FALLBACK ═══ -->
+        <div class="card">
+            <h2><span class="emoji">📋</span> Manual Import (Fallback)</h2>
+            <p style="margin-bottom: 4px;">If tapping doesn't work, copy this config and paste it into SlipNet's <strong>Import Profile</strong> menu.</p>
+            
+            <div class="config-box">
+                <div class="label-row">
+                    <span style="display: flex; align-items: center; gap: 6px;">
+                        <span class="saf-badge" style="font-size: .7rem; padding: 3px 10px;">slipnet-enc</span>
+                        <span style="font-size: .72rem; color: var(--muted);">AES-256-GCM</span>
+                    </span>
+                    <button class="copy-btn" onclick="copyRaw(this)">📋 Copy</button>
+                </div>
+                <code id="rawConfig">slipnet-enc://AcYa8hTgt/4B6CNqQTMX8R+bbsz6VblCaEIFTJzqbnlM2tsl08HARtR8W39AzbKHIyr63zOE+9ePprmBhrx7kyRPGXdzgmasuz1eoXyNRxJYSUs28xklFrqi512mep65C97JkiXGeDVs/yDpI1/kz+jW2xUy0ho/vVS5XJbxLRpNkLrdv7ngstG3Si5g7FbPhCwh6HC+bPrSuXzr27dCoqHH648hlKiodJ6Qn4y+12pgWtmvwr8ujD6uey0vqzn0cEltq63+QXPKrF6obmfRDpwdXPCH481hs1SZ95Y1L601wMgWEKrXEJYjH8KZmPoaeHiFLPh3Wpp+Tph2/CVgZxpxC68UEV6m7eVHHosTH30TWAYQr4QCD9X35id77ACjh40TZ4BrSa9RQA+WgPXF2PB98AkraPU2ivL9Sb1u9e4/ykIcWBDJYkmXEmLWpEv+/CAmvLjR5dpE2T3QBI4wXGwKp8HVRd60DW3Z9+rRDmUjf9+ZE27tWFUIjFKM2WQfa79gsl6floPby/EwikQLtMg8KWtLQk7LG5+eghzgJqL+uoJrVBnca2E4ViTS3km8V7YIlGp0au9NTxIatmnRd2Xk</code>
+            </div>
+        </div>
+
+        <!-- ═══ FEATURES ═══ -->
+        <div class="card">
+            <h2><span class="emoji">⚡</span> Why SlipNet?</h2>
+            <div class="grid-2">
+                <div class="grid-item"><span class="gi-icon">🔒</span><span class="gi-label">DNSTT (KCP+Noise)</span></div>
+                <div class="grid-item"><span class="gi-icon">🚀</span><span class="gi-label">Slipstream (QUIC)</span></div>
+                <div class="grid-item"><span class="gi-icon">🛡️</span><span class="gi-label">SSH Chaining</span></div>
+                <div class="grid-item"><span class="gi-icon">📡</span><span class="gi-label">DNS over HTTPS</span></div>
+                <div class="grid-item"><span class="gi-icon">🔎</span><span class="gi-label">DNS Scanner Built-in</span></div>
+                <div class="grid-item"><span class="gi-icon">🔐</span><span class="gi-label">AES-256-GCM Configs</span></div>
+            </div>
+        </div>
+
+        <!-- ═══ ABOUT ═══ -->
+        <div class="card" style="text-align: center;">
+            <h2 style="justify-content: center;"><span class="emoji">🇪🇹</span> About FES ETHIOPIA</h2>
+            <p>
+                <strong>Free Ethiopia Server (FES)</strong> provides
